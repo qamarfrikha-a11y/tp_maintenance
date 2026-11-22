@@ -50,6 +50,7 @@ $totalArticles = array_sum(array_column($_SESSION['cart'], 'qty'));
         .btn-danger { background: #dc2626; }
         .btn:hover { background: #115e59; }
         .product:hover { border-color: #0f766e; }
+        footer { margin-top: 40px; padding-top: 15px; border-top: 1px solid #cbd5e1; color: #475569; font-size: 14px; }
     </style>
 </head>
 <body>
