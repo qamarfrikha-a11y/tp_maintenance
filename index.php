@@ -13,6 +13,7 @@ $products = [
     2 => ['id' => 2, 'name' => 'Souris Sans Fil', 'price' => 55],
     3 => ['id' => 3, 'name' => 'Casque Audio', 'price' => 180],
     4 => ['id' => 4, 'name' => 'Clé USB 64Go', 'price' => 35],
+    5 => ['id' => 5, 'name' => 'Écran 24 Pouces', 'price' => 420],
 ];
 
 if (isset($_GET['add'])) {
