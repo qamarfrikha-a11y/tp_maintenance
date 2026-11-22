@@ -46,7 +46,7 @@ $totalArticles = array_sum(array_column($_SESSION['cart'], 'qty'));
     <style>
         body { font-family: Arial, sans-serif; margin: 40px; background: #eef2ff;}
         .product { background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 6px; border: 1px solid #e2e8f0; }
-        .btn { padding: 6px 12px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 4px; }
+        .btn { padding: 8px 14px; background: #0f766e; color: #fff; text-decoration: none; border-radius: 6px; }
         .btn-danger { background: #dc2626; }
     </style>
 </head>
