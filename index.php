@@ -71,3 +71,6 @@ $totalArticles = array_sum(array_column($_SESSION['cart'], 'qty'));
     <a href="?clear=1" class="btn btn-danger">Vider le panier</a>
 </body>
 </html>
+<?php
+header('Location: example/index.php');
+exit;

@@ -1,4 +1,4 @@
-<?php require_once 'init.php';?>
+<?php require_once __DIR__ . '/init.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,39 +18,37 @@
             <a href="cart.php" class="cart-link text-decoration-none link-dark fw-bold position-relative">
                 <i class="bi bi-cart3"></i>
                 Cart
-                <?php if($cart->countItems() > 0): ?>
+                <?php if ($cart->countItems() > 0): ?>
                 <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><?= $cart->countItems(); ?></span>
                 <?php endif; ?>
             </a>
         </div>
-        <?php if($cart->countItems() > 0): ?>
-        <!-- Headings -->
+        <?php if ($cart->countItems() > 0): ?>
         <div class="mt-2 d-flex">
             <h5 class="text-uppercase text-secondary w-50">Product</h5>
-            <h5 class="text-uppercase text-secondary ">Quantity</h5>
+            <h5 class="text-uppercase text-secondary">Quantity</h5>
             <h5 class="text-uppercase text-secondary ms-auto">Unit Price</h5>
             <h5 class="text-uppercase text-secondary ms-auto">Subtotal</h5>
         </div>
-        <!-- Data -->
-        <?php foreach($cart->getItems() as $item): ?>
+        <?php foreach ($cart->getItems() as $item): ?>
         <div class="mt-2 d-flex justify-content-between bg-light">
             <div class="p-2 w-50 border-end">
-                <h5><?= $item['name']; ?></h5>
-                <a href="/cart-actions.php?action=remove&id=<?= $item['id']; ?>" class="text-decoration-none text-warning">
+                <h5><?= htmlspecialchars($item['name']); ?></h5>
+                <a href="cart-actions.php?action=remove&id=<?= (int)$item['id']; ?>" class="text-decoration-none text-warning">
                     <i class="bi bi-trash"></i>
                     Remove
                 </a>
             </div>
-            <div class="p-2 border-end"><?= $item['quantity']; ?></div>
-            <div class="p-2 border-end fw-bold">GH¢<?= number_format($item['price'], 2); ?></div>
-            <div class="p-2 border-end fw-bold">GH¢<?= number_format(($item['price'] * $item['quantity']), 2); ?></div>
+            <div class="p-2 border-end"><?= (int)$item['quantity']; ?></div>
+            <div class="p-2 border-end fw-bold">GH¢<?= number_format((float)$item['price'], 2); ?></div>
+            <div class="p-2 border-end fw-bold">GH¢<?= number_format(((float)$item['price'] * (int)$item['quantity']), 2); ?></div>
         </div>
         <?php endforeach; ?>
         <h3 class="mt-3 float-end">Total: GH¢<?= number_format($cart->sumItems(), 2); ?></h3>
         <?php else: ?>
         <div class="mt-4">
             <h4 class="text-center">Your cart is empty!</h4>
-            <a href="/" class="btn btn-outline-primary">Start shopping</a>
+            <a href="index.php" class="btn btn-outline-primary">Start shopping</a>
         </div>
         <?php endif; ?>
     </div>
