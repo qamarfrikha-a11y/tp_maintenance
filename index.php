@@ -60,7 +60,7 @@ $totalArticles = array_sum(array_column($_SESSION['cart'], 'qty'));
 </footer>
 <body>
     <h1>Ma Boutique E-Commerce</h1>
-    <h2>Produits disponibles</h2>
+    <h2>Produits disponibles (<?= count($products) ?>)</h2>
     <?php foreach ($products as $p): ?>
         <div class="product">
             <strong><?= htmlspecialchars($p['name']) ?></strong> — <?= $p['price'] ?> DT
