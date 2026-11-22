@@ -53,6 +53,9 @@ $totalArticles = array_sum(array_column($_SESSION['cart'], 'qty'));
         footer { margin-top: 40px; padding-top: 15px; border-top: 1px solid #cbd5e1; color: #475569; font-size: 14px; }
     </style>
 </head>
+<footer>
+    <p>TP Maintenance Logicielle &amp; Git — Boutique E-Commerce PHP</p>
+</footer>
 <body>
     <h1>Ma Boutique E-Commerce</h1>
     <h2>Produits disponibles</h2>
