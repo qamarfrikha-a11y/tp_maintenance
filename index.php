@@ -12,6 +12,8 @@ $products = [
     1 => ['id' => 1, 'name' => 'Clavier Mécanique', 'price' => 120],
     2 => ['id' => 2, 'name' => 'Souris Sans Fil', 'price' => 55],
     3 => ['id' => 3, 'name' => 'Casque Audio', 'price' => 180],
+    4 => ['id' => 4, 'name' => 'Clé USB 64Go', 'price' => 35],
+    5 => ['id' => 5, 'name' => 'Écran 24 Pouces', 'price' => 420],
 ];
 
 if (isset($_GET['add'])) {
@@ -58,7 +60,7 @@ $totalArticles = array_sum(array_column($_SESSION['cart'], 'qty'));
 </footer>
 <body>
     <h1>Ma Boutique E-Commerce</h1>
-    <h2>Produits disponibles</h2>
+    <h2>Produits disponibles (<?= count($products) ?>)</h2>
     <?php foreach ($products as $p): ?>
         <div class="product">
             <strong><?= htmlspecialchars($p['name']) ?></strong> — <?= $p['price'] ?> DT
