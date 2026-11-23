@@ -1,4 +1,4 @@
-<?php require_once 'init.php'; ?>
+<?php require_once __DIR__ . '/init.php'; ?>
 
 <!doctype html>
 <html lang="en">
@@ -12,34 +12,34 @@
     <link rel="stylesheet" href="css/custom.css">
     <title>PHP Shopping Cart Example!</title>
   </head>
-  <body> 
+  <body>
     <div class="container py-5">
         <div class="pb-2 border-bottom d-flex justify-content-between align-items-center">
             <h2>Products in Stock</h2>
             <a href="cart.php" class="cart-link text-decoration-none link-dark fw-bold position-relative">
                 <i class="bi bi-cart3"></i>
                 Cart
-                <?php if($cart->countItems() > 0): ?>
+                <?php if ($cart->countItems() > 0): ?>
                 <span class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-1"><?= $cart->countItems(); ?></span>
                 <?php endif; ?>
             </a>
         </div>
         <div class="row g-5 py-5">
-          <?php foreach($products as $product): ?>
+          <?php foreach ($products as $product): ?>
           <div class="feature col-md-4">
             <div class="product-image">
-                <img src="<?= $product['image_url']; ?>" class="img-thumbnail" alt="Product Image">
+                <img src="<?= htmlspecialchars(ltrim($product['image_url'], '/')); ?>" class="img-thumbnail" alt="Product Image">
             </div>
-            <h2 class="fw-light"><?= $product['name']; ?></h2>
-            <p><?= $product['description']; ?></p>
-            <h5>GH¢<?= number_format($product['price'], 2); ?></h5>
-            <a href="cart-actions.php?action=add&id=<?= $product['id'] ?>" class="product-link">
-              <span>Add to cart<span>
+            <h2 class="fw-light"><?= htmlspecialchars($product['name']); ?></h2>
+            <p><?= htmlspecialchars($product['description']); ?></p>
+            <h5>GH¢<?= number_format((float)$product['price'], 2); ?></h5>
+            <a href="cart-actions.php?action=add&id=<?= (int)$product['id']; ?>" class="product-link">
+              <span>Add to cart</span>
               <i class="bi bi-chevron-double-right"></i>
             </a>
           </div>
           <?php endforeach; ?>
         </div>
-      </div>
+    </div>
   </body>
 </html>
