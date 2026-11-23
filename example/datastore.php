@@ -42,5 +42,13 @@ return [
         'price' => 17.00,
         'image_url' => '/images/product-6.jpg',
         'description' => 'Get this Lenovo M20 USB Optical Mouse with 3 buttons, Right-Handed Comfort Grip and Fashionable design. Comfortable hand touch and suitable for both hands...',
+    ],
+    [
+        'id' => 7,
+        'name' => 'Mechanical Keyboard',
+        'price' => 120.00,
+        'image_url' => '/images/product-1.jpg',
+        'description' => 'RGB Mechanical Gaming Keyboard with tactile switches and durable aluminum frame...',
     ]
+
 ];
